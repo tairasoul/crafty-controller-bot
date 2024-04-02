@@ -2,6 +2,7 @@
     "token": "bot-token",
     "crafty": {
         "username": "user-name",
-        "password": "passowrd"
-    }
+        "password": "password"
+    },
+    "ip": "https://127.0.0.1:8111"
 }

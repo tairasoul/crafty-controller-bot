@@ -4,9 +4,9 @@ import fs from "fs";
 import { fileURLToPath } from 'url';
 import path from "path";
 import CommandHandler from "./classes/CommandHandler.js";
-export const api = new Crafty("https://192.168.18.180:8111");
 const __dirname = path.dirname(decodeURIComponent(fileURLToPath(import.meta.url)));
-const { token, crafty } = JSON.parse(fs.readFileSync(path.join(__dirname, "../config.json"), 'utf8'));
+const { token, crafty, ip } = JSON.parse(fs.readFileSync(path.join(__dirname, "../config.json"), 'utf8'));
+export const api = new Crafty(ip);
 const client = new oceanic.Client({
     auth: `Bot ${token}`,
     gateway: {
