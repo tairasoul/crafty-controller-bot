@@ -1,0 +1,7 @@
+{
+	"dependencies": {
+		"@oceanicjs/builders": "^1.1.9",
+		"oceanic.js": "^1.10.0"
+	},
+	"type": "module"
+}
