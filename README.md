@@ -1,6 +1,6 @@
 # crafty-bot
 
-Just a simple bot to control Crafty Controller servers.
+Just a simple bot that communicates with Crafty Controller.
 
 This has most of the features within the Crafty Controller v2 API implemented into the discord bot.
 
