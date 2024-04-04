@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import path from "path";
 import CommandHandler from "./classes/CommandHandler.js";
 const __dirname = path.dirname(decodeURIComponent(fileURLToPath(import.meta.url)));
-const { token, crafty, ip } = JSON.parse(fs.readFileSync(path.join(__dirname, "../config.json"), 'utf8'));
+export const { token, crafty, ip } = JSON.parse(fs.readFileSync(path.join(__dirname, "../config.json"), 'utf8'));
 export const api = new Crafty(ip);
 const client = new oceanic.Client({
     auth: `Bot ${token}`,
@@ -27,9 +27,10 @@ client.on("ready", async () => {
         const file = `${commandDir}/${command}`;
         await handleFile(file);
     }
-    console.log("registering commands");
-    await handler.register();
     console.log("logging in to crafty");
     await api.login(crafty);
+    console.log("registering commands");
+    await handler.register();
+    console.log('registered commands.');
 });
 client.connect();

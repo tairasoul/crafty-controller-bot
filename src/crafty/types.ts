@@ -1,12 +1,14 @@
-export interface Login {
-    status: "ok",
+import * as schemas from "./schemas.js";
+
+export type Login = {
+    status: string,
     data: {
         token: string;
         user_id: string;
     }
 }
 
-export interface LoginParams {
+export type LoginParams = {
     username: string;
     password: string;
 }
@@ -20,7 +22,7 @@ export enum Actions {
     update = "update_executable"
 }
 
-export interface Server {
+export type Server = {
     server_id: number;
     created: string;
     server_uuid: string;
@@ -41,7 +43,7 @@ export interface Server {
     type: "minecraft-java" | "minecraft-bedrock"
 }
 
-export interface Stats {
+export type Stats = {
     stats_id: number;
     created: string;
     server_id: Server;
@@ -64,4 +66,52 @@ export interface Stats {
     first_run: boolean;
     crashed: boolean;
     downloading: boolean;
+}
+
+export type CreateServer_Response = {
+    status: string;
+    data: {
+        new_server_id: string;
+        new_server_uuid: string;
+    }
+}
+
+export type CreateWebhook_Response = {
+    status: string;
+    data: {
+        webhook_id: string;
+    }
+}
+
+export type GetWebhook_Response = {
+    status: string;
+    data: {
+        [key: string]: schemas.get_webhook;
+    }
+}
+
+export type ScheduleCreate_Response = {
+    status: string;
+    data: {
+        schedule_id: string;
+    }
+}
+
+export type GetServer_Response = {
+    status: string;
+    data: {
+        role_id: number;
+        created: string;
+        last_update: string;
+        role_name: string;
+    }
+}
+
+export type BasicResponse = {
+    status: string;
+}
+
+export type GetLogs_Response = {
+    status: string;
+    data: string[];
 }

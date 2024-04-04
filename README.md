@@ -2,11 +2,20 @@
 
 Just a simple bot to control Crafty Controller servers.
 
-There's not much.
+This has most of the features within the Crafty Controller v2 API implemented into the discord bot.
 
-Only features are:
+v2 API wrapper is in src/crafty.
 
-- Get servers
-- Get statistics of a server
-- Send an action to the server (excluding clone_server)
-- Send a command to the server's RCON (stdin)
+Almost all server-related features are implemented in the v2 API wrapper.
+
+## todo
+
+- Implement schedules.
+
+- Implement [2.3.11 Get everyone with access to a server](https://wiki.craftycontrol.com/en/4/docs/API%20V2#get-everyone-with-access-to-a-server)
+
+- Implement [2.2 Role requests (all of it)](https://wiki.craftycontrol.com/en/4/docs/API%20V2#role-requests)
+
+- Implement [2.4 User requests (all of it)](https://wiki.craftycontrol.com/en/4/docs/API%20V2#user-requests)
+
+- Implement [2.5.1 Modify config.json](https://wiki.craftycontrol.com/en/4/docs/API%20V2#modify-config-json)

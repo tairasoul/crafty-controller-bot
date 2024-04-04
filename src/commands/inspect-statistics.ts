@@ -18,21 +18,21 @@ export default defineCommand(
             const id = interaction.data.options.getString("id", true);
             const stats = await api.getStatistics(id);
             const str = 
-            `## ${stats.server_id.server_name}
-            - started: ${stats.started}
-            - running: ${stats.running}
-            - cpu: ${stats.cpu}%
-            - mem: ${stats.mem}
-            - mem usage: ${stats.mem_percent}
-            - online: ${stats.online}
-            - waiting start: ${stats.waiting_start}
-            - version: ${stats.version}
-            - desc: ${stats.desc}
-            - players online: ${stats.online}
-            - max players: ${stats.max}
-            - players: ${(JSON.parse(stats.players) as string[]).join(", ")}
-            - world name: ${stats.world_name}
-            - world size: ${stats.world_size}`;
+            `## ${stats.data.server_id.server_name}
+            - started: ${stats.data.started}
+            - running: ${stats.data.running}
+            - cpu: ${stats.data.cpu}%
+            - mem: ${stats.data.mem}
+            - mem usage: ${stats.data.mem_percent}
+            - online: ${stats.data.online}
+            - waiting start: ${stats.data.waiting_start}
+            - version: ${stats.data.version}
+            - desc: ${stats.data.desc}
+            - players online: ${stats.data.online}
+            - max players: ${stats.data.max}
+            - players: ${(JSON.parse(stats.data.players) as string[]).join(", ")}
+            - world name: ${stats.data.world_name}
+            - world size: ${stats.data.world_size}`;
             await interaction.editOriginal({content: str});
         }
     }

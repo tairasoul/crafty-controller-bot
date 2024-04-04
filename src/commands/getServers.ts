@@ -9,7 +9,7 @@ export default defineCommand(
             await interaction.defer();
             const data = await api.getServers();
             let str = "";
-            for (const server of data) {
+            for (const server of data.data) {
                 str += `## ${server.server_name} (id ${server.server_id})\n`;
                 str += `- type: ${server.type}\n\n`;
             }

@@ -1,7 +1,7 @@
 import * as oceanic from "oceanic.js";
 import defineCommand from "../functions/defineCommand.js";
 import { api } from "../bot.js";
-import { Actions } from "../crafty/interfaces.js";
+import { Actions } from "../crafty/types.js";
 export default defineCommand({
     name: "send-action",
     description: "Send an action to the server.",
